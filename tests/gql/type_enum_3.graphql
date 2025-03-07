@@ -1,0 +1,15 @@
+
+type User {
+  id: ID! @exclude
+  name: String! @transform(type: "string")
+  email: String! @transform(type: "string", repeated: true)
+  addresses: [Address] @transform(type: "repeated Address")
+  favorite_color: Color @transform(type: "enum", custom_type: "MyColor")
+  metadata: Map<String, String> @transform(type: "map", map_key: "string", map_value: "string")
+}
+
+enum Color {
+  RED
+  GREEN
+  BLUE
+}

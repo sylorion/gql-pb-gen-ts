@@ -1,6 +1,6 @@
 {
   "name": "@sylorion/gql-pb-gen",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "GraphQL Protobuff generator",
   "main": "index.js",
   "type": "module",

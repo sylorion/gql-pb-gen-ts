@@ -3,7 +3,7 @@ directive @exclude on
 FIELD_DEFINITION | INPUT_FIELD_DEFINITION 
 | UNION | INTERFACE | ENUM | OBJECT
 
-directive @secure(hash: string, comment: string) on 
+directive @secure(hash: String, comment: String) on 
 FIELD_DEFINITION | INPUT_FIELD_DEFINITION | UNION | INTERFACE | ENUM_VALUE 
 
 directive @transform(
@@ -15,3 +15,31 @@ directive @transform(
   map_key: String
   map_value: String
 ) on FIELD_DEFINITION | INPUT_FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM_VALUE | SCALAR | UNION | INTERFACE | ENUM | INPUT_OBJECT | OBJECT
+
+directive @authenticated on
+    FIELD_DEFINITION
+  | OBJECT
+  | INTERFACE
+  | SCALAR
+  | ENUM
+
+directive @role(roles: [SMPAuthzRole!]!) on
+    FIELD_DEFINITION
+  | OBJECT
+  | INTERFACE
+  | SCALAR
+  | ENUM
+
+directive @authorization(roles:[[SMPAuthzRole!]!]!, scopes: [[SMPAuthzScope!]!]!) on
+    FIELD_DEFINITION
+  | OBJECT
+  | INTERFACE
+  | SCALAR
+  | ENUM
+
+directive @policy(policies: [[SMPAuthzPolicy!]!]!) on
+  | FIELD_DEFINITION
+  | OBJECT
+  | INTERFACE
+  | SCALAR
+  | ENUM
